@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AppSpace - P2P Marketplace</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="icon" type="image/png" sizes="32x32" href="<%= image_url('favicon-16x16.png') %>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<%= image_url('favicon-32x32.png') %>">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <a class="navbar-brand" href="/"><i class="fab fa-app-store fa-2x text-primary"></i></a>
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link nav-link-size text-primary" href="<%= apps_path %>">Listings <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <% if user_signed_in? && !current_user.store.present? %>
+              <b><%= link_to 'Become a Seller', new_user_store_path(current_user.id), class: 'nav-link nav-link-size text-primary' %></b>
+            <% elsif user_signed_in? %>
+              <b><%= link_to 'Create A Listing', new_app_path, class: 'nav-link nav-link-size text-primary' %></b>
+            <% end %>
+          </li>
+          <li class="nav-item-active">
+            <% if user_signed_in? && current_user.store.present? %>
+              <%= link_to "My Listings", user_store_path(current_user.id, current_user.store.id), class: 'nav-link nav-link-size text-primary' %>
+            <% end %>
+        </ul>
+        <div class="my-2 my-lg-0">
+          <% if user_signed_in? %>
+          <div class="nav-item dropdown">
+            <a class="nav-link nav-link-size dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              My Account
+            </a>
+            <div class="dropdown-menu nav-link-size" >
+              <% if current_user.user_profile.present? %>
+              <p><%= link_to 'My Profile', edit_user_user_profile_path(current_user.id, current_user.user_profile.id)%></p>
+              <% end %>
+              <p><%= link_to 'Account Settings', edit_user_registration_path %></p>
+              <% unless current_user.store.present? %>
+              <p><%= link_to 'Become a Seller', new_user_store_path(current_user.id) %></p>
+              <% else %>
+              <p><%= link_to 'Create a Listing', new_app_path %></p>
+              <% end %>
+              <p><%= link_to 'Log out', destroy_user_session_path, method: :delete %></p>
+            <% else %>
+            <div class="nav-item active">
+              <a class="btn btn-outline-primary" href="<%= new_user_session_path %>">Login <span class="sr-only">(current)</span></a>
+            </div>
+            <% end %>
+          </li>
+          </div>
+    </nav>
+  <% flash.each do |key, value| %>
+  <div class="alert alert-primary alert-dismissable fade show" role="alert">
+    <%= value %>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <% end %>
+    <%= yield %>
+  </div>
+  <%= render "layouts/shared/footer" %>
+  </body>
+</html>

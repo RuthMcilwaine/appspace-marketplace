@@ -1,0 +1,23 @@
+
+@import "bootstrap";
+
+.bg-image {
+  height: 100vh;
+  background-size: cover;
+  background-image: image_url('home.jpg'); 
+  background-repeat: no-repeat;
+}
+
+.text {
+  padding-top: 10%;
+  margin-left: 15%;
+  text-align: left !important;
+}
+
+.cover-heading {
+  color: azure;
+}
+
+.lead {
+  color: azure;
+}

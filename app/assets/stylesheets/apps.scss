@@ -1,0 +1,80 @@
+// Place all the styles related to the apps controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.con-med {
+  width: 50%;
+  margin: 0 auto;
+  box-shadow: 5px 6px #007bff;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  background: ghostwhite;
+}
+
+.text-center {
+  margin-top: 2%;
+  text-align: center;
+}
+
+.image-container {
+  margin-bottom: 2%;
+}
+
+.container-column {
+  text-align: center;
+  margin: 2% 22% 2% 22%;
+}
+
+.desc {
+  margin-top: 2%;
+}
+
+.container-center {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
+.max-width-container {
+  max-width: 40%;
+}
+
+.container-rows {
+  display: flex;
+  justify-content: center;
+  // flex-flow: row;
+  padding: 20px;
+  padding-top: 30px;
+  margin: 1px;
+}
+
+.subtitle {
+  font-size: 10pt;
+}
+
+.container-column {
+  display: flex;
+  flex-flow: column;
+}
+
+.w-60 {
+  width: 60%;
+}
+
+.text-hero {
+  color: #454f5b;
+}
+
+.image-container-top {
+  margin-top: 1px;
+  margin: 25px;
+}
+
+.screenshots-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  overflow: scroll;
+}
