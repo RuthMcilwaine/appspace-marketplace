@@ -28,15 +28,15 @@ Full-stack developer working on both frontend and backend features, collaboratin
 
 ## Notes
 - Website: https://appstore-coderacademy.herokuapp.com/ (previously hosted on Heroku, now inactive)
-- This repo represents the current version of the project. The original repository with full commit history is available [here](#).
+- This repo represents the current version of the project. The original repository with full commit history is available [here](https://github.com/ruthmci/rails-appstore).
 - Figma designs and project documentation are available in the `docs` folder.
 - API keys and sensitive config are excluded for security.
 
-# Database schema design
+## Database schema design
 Entity Relationship Diagram (ERD):
 ![ERD](/docs/application-store-erd.jpeg "ERD")
 
-# User stories
+## User stories
 Users must sign up to interact with the platform. Once logged in, they can either:
 Browse and purchase apps as a buyer
 Register a store and become a seller
@@ -46,11 +46,11 @@ Use the Stripe integration to securely purchase apps and receive download access
 User Stories
 ![User Stories](/docs/Figma:User.png "User Stories")
 
-# Wireframes
+## Wireframes
 Designed in Figma to guide initial layout and UX decisions:
 ![Figma Wireframes](/docs/Figma:User.png "Figma Wireframes")
 
-# Project Planning
+## Project Planning
 Used Trello to plan tasks and keep track of progress
 Daily check-ins to share updates
 Pair programming sessions to solve problems together
@@ -64,16 +64,16 @@ Trello
 ![Trello Screenshot 3](/docs/Trello-3.png "Trello Screenshot 3")
 
 
-# Git Workflow
+## Git Workflow
 Each person worked on their own branch
 We used pull requests to review and merge code
 Tried to keep merges small to avoid conflicts
 
-# Testing
+## Testing
 Manual testing through the browser
 Used Rails console and Byebug to test data and logic
 Checked forms, payments, and role-based access
 
-# Team
+## Team
 Ruth McIlwaine
 Praveen Muthu
